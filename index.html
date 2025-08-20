@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro - Exame de Ordem</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-image">
+            <h2 class="card-heading">
+                Calculadora <br/>1ª Fase 44 EOU
+                <small>Preencha para<br/>continuar.</small>
+            </h2>
+        </div>
+            <div>
+                <form id="formCaptura" class="card-form">
+                        <div class="input">
+                                <input type="text" id="nome" class="input-field" required/>
+                                <label class="input-label">Nome Completo</label>
+                        </div>
+                        <div class="input">
+                                <input type="email" id="email" class="input-field" required/>
+                                <label class="input-label">E-mail</label>
+                        </div>
+                        <div class="input">
+                                <input type="tel" id="telefone" class="input-field" required/>
+                                <label class="input-label">Telefone</label>
+                        </div>
+                        <div class="input">
+                                <select id="oab" class="input-field" required>
+                                    <option value=""></option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                                <label class="input-label">Aluno OAB de Bolso?</label>
+                        </div>
+                        <div class="input">
+                                <select id="prova" class="input-field" required>
+                                    <option value=""></option>
+                                    <option value="tipo1">Tipo 1</option>
+                                    <option value="tipo2">Tipo 2</option>
+                                    <option value="tipo3">Tipo 3</option>
+                                    <option value="tipo4">Tipo 4</option>
+                                </select>
+                            <label class="input-label">Tipo de Prova</label>
+                        </div>
+                        <div class="action">
+                                <button type="submit" class="action-button">Continuar</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Desenvolvido por Lucas Oliveira</p>
+        </div>
+</div>  
+        <script src="index.js"></script>
+</body>
+</html>
