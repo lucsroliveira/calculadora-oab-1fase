@@ -2,7 +2,7 @@
 
 body { font-family: "DM Sans", sans-serif; background-color: #365eff; padding: 0 1rem; }
 .container { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-.card { width: 100%; max-width: 600px; background: #fff; border-radius: 10px; padding: 1rem 2rem; box-shadow: 0 10px 20px rgba(0,0,0,.2); }
+.card { top: 40px; position: relative; width: 100%; max-width: 600px; background: #fff; border-radius: 10px; padding: 1rem 2rem; box-shadow: 0 10px 20px rgba(0,0,0,.2); }
 .card-heading { font-size: 1.5rem; color: #333; margin-bottom: 1rem; }
 .questao { margin-bottom: 1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.5rem; }
 .questao p { margin-bottom: 0.5rem; font-weight: bold; }
@@ -22,4 +22,21 @@ body { font-family: "DM Sans", sans-serif; background-color: #365eff; padding: 0
 }
 .action-button:hover {
     background-color: #3083ff;
+}
+
+.circulo {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: #0254ce; /* mesma cor do botão */
+    border-radius: 50%;
+    border: 4px solid #fff; /* borda branca para destacar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-image: url("Logo_OAB_.png");
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: center;
 }
