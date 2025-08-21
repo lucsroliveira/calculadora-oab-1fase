@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  document.getElementById("tituloProva").innerText = 
-    `Prova ${alunoData.prova.toUpperCase()} - Responda as Questões`;
+  let primeiroNome = alunoData.nome.split(" ")[0];
+  primeiroNome = primeiroNome.charAt(0).toUpperCase() + primeiroNome.slice(1).toLowerCase();
 
+  document.getElementById("tituloProva").innerText = 
+    `Olá, ${primeiroNome}! Prova ${alunoData.prova.toUpperCase()} - Responda as Questões`;
+    
   const resp = await fetch("gabarito.json");
   const gabarito = await resp.json();
   const questoes = gabarito[alunoData.prova];
@@ -42,13 +45,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    document.getElementById("resultado").innerHTML = `
-      <p><strong>${alunoData.nome}</strong> (${alunoData.email})</p>
-      <p>Acertos: <strong>${acertos}</strong></p>
-      <p>Anuladas: <strong>${anuladas}</strong></p>
-      <p>Total: ${Object.keys(questoes).length}</p>
-      <p>Percentual: <strong>${((acertos / Object.keys(questoes).length) * 100).toFixed(2)}%</strong></p>
-      <p>Aluno OAB de Bolso: <strong>${alunoData.oab}</strong></p>
-    `;
+    const resultadoData = {
+    acertos,
+    anuladas,
+    total: Object.keys(questoes).length,
+    percentual: ((acertos / Object.keys(questoes).length) * 100).toFixed(2)
+  };
+
+  localStorage.setItem("resultadoData", JSON.stringify(resultadoData));
+
+    window.location.href = "resultado.html";
   });
 });
